@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Your Seat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Base styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .admin-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .admin-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .main-content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 12px 15px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+            outline: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{{ url_for('login') }}" class="admin-btn">Admin Login</a>
+
+    <div class="main-content">
+        <h2>Find Your Seat</h2>
+        <form action="{{ url_for('seating') }}" method="get">
+            <input type="text" name="roll_no" placeholder="Enter Roll Number" required>
+            <button type="submit">Find Seat</button>
+        </form>
+
+        {% if filename %}
+        <a href="{{ url_for('static', filename='uploads/' + filename) }}" class="download-btn" download>
+            Download Assigned Seats
+        </a>
+        {% endif %}
+    </div>
+
+</body>
+</html>

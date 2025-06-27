@@ -1,0 +1,245 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Form Container */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Form Header */
+form h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Input Fields */
+input[type="file"], select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* File Input Hover Effect */
+input[type="file"]:hover, select:hover {
+    border-color: #0056b3;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Button Focus Animation */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Form Hover Effect */
+form:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Subject Select */
+select {
+    transition: border-color 0.3s ease;
+}
+
+/* Select Hover Effect */
+select:hover {
+    border-color: #0056b3;
+}
+
+/* Success and Error Messages */
+.success, .error {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+}
+
+/* Hover Effects */
+input[type="file"]:hover, select:focus {
+    border-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+form {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 0;
+}
+
+/* Heading */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Seating Details Paragraph */
+p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Styling for Not Assigned Text */
+strong {
+    color: #333;
+    font-weight: bold;
+}
+
+p span {
+    color: #007bff; /* Blue for important information */
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #28a745; /* Green color */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Back Button Hover Effect */
+.back-btn:hover {
+    background-color: #218838; /* Darker green */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Back Button Focus Effect */
+.back-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.6);
+}
+
+/* No Record Found Message */
+.no-record {
+    color: #dc3545; /* Red color */
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 40px 10px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .back-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}

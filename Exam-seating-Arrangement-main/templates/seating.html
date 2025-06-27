@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seating Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    {% if student %}
+        <h2>Seating Details</h2>
+        <p><strong>Name:</strong> {{ student.name or 'N/A' }}</p>
+        <p><strong>Roll No:</strong> {{ student.roll_no or 'N/A' }}</p>
+        <p><strong>Room:</strong> {{ student.room or 'Not Assigned' }}</p>
+        <p><strong>Seat No:</strong> {{ student.seat_no or 'Not Assigned' }}</p>
+    {% elif not_found %}
+        <p>No record found for the entered Roll Number.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" class="back-btn">Back to Home</a>
+</body>
+</html>

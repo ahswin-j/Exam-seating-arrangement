@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Upload Data</title>
+</head>
+<body>
+    <h2>Upload Student & Classroom CSV</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="students" required>
+        <input type="file" name="classrooms" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if subject_data %}
+    <form action="{{ url_for('assign') }}" method="post">
+        <h3>Select Subjects for Each Department</h3>
+
+        <label>AIDS Subject:</label>
+        <select name="aids_subject">
+            {% for sub in subject_data['AIDS'] %}
+            <option value="{{ sub.code }}">{{ sub.code }} - {{ sub.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>CCE Subject:</label>
+        <select name="cce_subject">
+            {% for sub in subject_data['CCE'] %}
+            <option value="{{ sub.code }}">{{ sub.code }} - {{ sub.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>CSE Subject:</label>
+        <select name="cse_subject">
+            {% for sub in subject_data['CSE'] %}
+            <option value="{{ sub.code }}">{{ sub.code }} - {{ sub.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label>ECE Subject:</label>
+        <select name="ece_subject">
+            {% for sub in subject_data['ECE'] %}
+            <option value="{{ sub.code }}">{{ sub.code }} - {{ sub.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Assign Seats</button>
+    </form>
+    {% endif %}
+</body>
+</html>

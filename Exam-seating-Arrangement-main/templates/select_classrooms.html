@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Classrooms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="upload-page">
+    <div class="upload-container">
+        <h2>Select Classrooms to Use</h2>
+        <form method="POST">
+            {% for room in classrooms %}
+                <div>
+                    <input type="checkbox" name="classrooms" value="{{ room }}" id="{{ room }}">
+                    <label for="{{ room }}">{{ room }}</label>
+                </div>
+            {% endfor %}
+            <button type="submit">Confirm & Assign Seats</button>
+        </form>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
